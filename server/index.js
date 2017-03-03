@@ -12,9 +12,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(compression()); // Ligar a compressão gzip
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../build')));
 
-app.get('/', function(req, res) {
+app.get('/hello', function(req, res) {
   res.send('Hello World');
 });
 
